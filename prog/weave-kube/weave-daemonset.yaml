@@ -1,8 +1,7 @@
-#
-# WARNING: This YAML file applies to Kubernetes at HEAD (currently around v1.6.0-alpha.2)
-#
 kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1beta1
+# In Kubernetes 1.6 roles move from alpha to beta, but we can continue
+# to call it via the alpha name
+apiVersion: rbac.authorization.k8s.io/v1alpha1
 metadata:
   name: weave-net
 rules:
@@ -32,7 +31,7 @@ metadata:
   namespace: kube-system
 ---
 kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1alpha1
 metadata:
   name: weave-net
 roleRef:
